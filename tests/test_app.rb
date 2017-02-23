@@ -41,8 +41,19 @@ class TestApp < Minitest::Test
 	end
 
 	def test_get_fav_nums
-		get '/fav_nums?name=Chad&age=23'
-		assert(last_response.body.include?('Chad, You are 23 years old! What are your three favorite numbers?'))
+		get '/fav_nums?age=23&name=Chad'
+		assert(last_response.body.include?('Chad'))
+		assert(last_response.body.include?('23'))
+		assert(last_response.ok?)
+	end
+
+	def test_post_fav_nums
+		post '/fav_nums', age_input: '23', name_input: 'Chad', fav_num1_input: '4', fav_num2_input: '3', fav_num3_input: '2', sum: '9', results: 'less than'
+		assert(last_response.body.include?('23'))
+		assert(last_response.body.include?('Chad'))
+		assert(last_response.body.include?('4'))
+		assert(last_response.body.include?('3'))
+		assert(last_response.body.include?('2'))
 		assert(last_response.ok?)
 	end
 end

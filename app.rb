@@ -21,27 +21,38 @@ class PersonalDetailsApp < Sinatra::Base
 		name = params[:name_input]
 		age = params[:age_input]
 		
-		redirect '/fav_nums?age=' + age + '&name' + name
+		redirect '/fav_nums?age=' + age + '&name=' + name
 	end
 
 	get '/fav_nums' do
 		name = params[:name]
 		age = params[:age]
-		"#{name} and #{age}"
+		erb :fav_nums, :locals => {name: name, age: age}
 
 	end
 
 	post '/fav_nums' do
 		name = params[:name_input]
-		age = params[:age_input]
+		age = params[:age_input].to_i
 
-		redirect '/results?fav_nums=' + fav_nums + '&age' + age + '&name' + name
-	end
+		#redirect '/results?fav_nums=' + fav_nums + '&age' + age + '&name' + name
+	fav_num1 = params[:fav_num1_input].to_i
+	fav_num2 = params[:fav_num2_input].to_i
+	fav_num3 = params[:fav_num3_input].to_i
 
-	get '/results' do
-		name = parmas[:name]
-		age = params[:age]
-		fav_nums = params[:fav_nums]
-		"#{name} and #{age} and #{fav_nums}"
+	sum = (fav_num1 + fav_num2 + fav_num3)
+
+		results = 'less than'
+		if (sum > age)
+			results = 'greater than'
+		elsif (sum == age)
+			results = 'equal to'
+		else
+			results
+		end
+	
+		erb :results, :locals => {name: name, age: age, fav_num1: fav_num1, fav_num2: fav_num2, fav_num3: fav_num3, :sum => sum, :results => results}
+
 	end
 end
+
