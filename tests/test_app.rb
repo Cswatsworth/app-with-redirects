@@ -15,8 +15,9 @@ class TestApp < Minitest::Test
 		assert(last_response.ok?)
 		assert(last_response.body.include?('Hello, what is your name'))	
 		assert(last_response.body.include?('<input type="text" name="name_input">'))
-		assert(last_response.body.include?('<form method="post" action="/name">'))
+		assert(last_response.body.include?('<form class="center" method="post" action="/name">'))
 		assert(last_response.body.include?("<input type='submit' value = 'Submit'>"))
+	#<form method="post" action="/name"> line 18
 	end
 
 	def test_post_to_name
