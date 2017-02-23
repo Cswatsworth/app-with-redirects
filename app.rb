@@ -34,8 +34,6 @@ class PersonalDetailsApp < Sinatra::Base
 	post '/fav_nums' do
 		name = params[:name_input]
 		age = params[:age_input].to_i
-
-		#redirect '/results?fav_nums=' + fav_nums + '&age' + age + '&name' + name
 	fav_num1 = params[:fav_num1_input].to_i
 	fav_num2 = params[:fav_num2_input].to_i
 	fav_num3 = params[:fav_num3_input].to_i
