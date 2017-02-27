@@ -1,15 +1,45 @@
-.headline_color{
-color: blue;
+.headline{
+color: red;
+font-size: 4rem;
 }
 .center{
 text-align: center;
 }
-#center{
-text-align: center;
-}
 .bg_color{
-background-color: gold;
+b  color: #4FB4D0;
+    background: #135364;
+    margin-top: 5px;
+    padding-left: 5px;
+    font-size: 16px;
+    display: inline;
+    float: center;
+    padding-right: 9px;
+    clear: both;
 }
+.body{
+background-image: url("/../images/personal.jpg");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 30rem
+}
+/*.imagecenter{
+	display: block;
+	background-position: center;
+	margin: 0 auto;
+}*/
 .font{
-font-size: 4rem;
+color: red;
+font-size: 16px;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+  	right: 0;
+  	height: 100px;
+  	text-align: center;
+}
+.fontstyle{
+	font-style: italic; 
 }
