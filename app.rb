@@ -1,6 +1,6 @@
 require 'sinatra'
 
-class PersonalDetailsApp < Sinatra::Base
+#class PersonalDetailsApp < Sinatra::Base
 
 	get '/' do 
 		erb :name
@@ -52,5 +52,5 @@ class PersonalDetailsApp < Sinatra::Base
 		erb :results, :locals => {name: name, age: age, fav_num1: fav_num1, fav_num2: fav_num2, fav_num3: fav_num3, :sum => sum, :results => results}
 
 	end
-end
+#end
 
